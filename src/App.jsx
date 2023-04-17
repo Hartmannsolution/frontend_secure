@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react"
 import facade from "./apiFacade";
-import LogIn from "./components/LoginForm";
-import LoggedIn from "./components/LoggedIn";
+import { Routes, Route, NavLink } from "react-router-dom";
+import Header from "./components/Header";
+import Content from "./components/Content";
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
   const logout = () => {
     facade.logout();
     setLoggedIn(false);
-    setUser({ name: "", roles: "" })
+    setUser({ username: "", roles: "" })
   }
   const login = (user, pass) => {
     facade.login(user, pass).then(() => {
@@ -22,14 +23,13 @@ function App() {
   }
 
   return (
-    <div>
-      {!loggedIn ? (<LogIn login={login} />) :
-        (<div>
-          <LoggedIn user={user} />
-          <button onClick={logout}>Logout</button>
-        </div>)}
-    </div>
+  <div>
+   <Header loggedIn={loggedIn} login={login} user={user} logout={logout}/> 
+  <Content user={user}/>
+    
+  </div>
   )
 }
+
 
 export default App;

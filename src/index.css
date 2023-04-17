@@ -1,4 +1,6 @@
-
+.header {
+  color: whitesmoke;
+}
 /* For the router */
 ul.header {
   list-style-type: none;
