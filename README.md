@@ -2,11 +2,16 @@
 This repo is made for workshop on 3rd semester of Datamatiker education at Cphbusiness
 
 ## Exercise 1
+1. Start backend server: recap_sem3.
+2. clone this repo: `git clone -b git topnavigation https://github.com/Hartmannsolution/frontend_secure.git`
+3. cd into the folder: `cd frontend_secure` and run `npm install` and `npm run dev`
+4. Open the browser and go to the application url.
 1. Together in class go through the content of apiFacade.js and see how it works
 2. Together in class go through the content of the App.js and see how it works
 3. Together in class go through the content of the components folder and see how it works
 
 ## Exercise 2
+1. Checkout the main branch.
 1. Setup routing with react-router-dom.
   - Create 2 new components called Home and About with some dummy content
   - Create a header component with a navigation bar with links to Home and About
