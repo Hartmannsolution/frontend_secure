@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-function LogIn({ login }) {
+function LogIn({ login, logout, loggedIn}) {
     const init = { username: "", password: "" };
     const [loginCredentials, setLoginCredentials] = useState(init);
   
@@ -12,14 +12,17 @@ function LogIn({ login }) {
     }
   
     return (
-      <div>
-        <h2>Login</h2>
-        <form onChange={onChange} >
+      <>
+        
+        {
+          loggedIn? <button onClick={logout}>Logout</button>:
+          <form onChange={onChange} className="form">
           <input placeholder="User Name" id="username" />
           <input placeholder="Password" id="password" />
           <button onClick={performLogin}>Login</button>
         </form>
-      </div>
+        }
+      </>
     )
   }
 export default LogIn;  
